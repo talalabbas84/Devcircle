@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://talalabbas84:6No981duj9tLtWSd@cluster0-ijzp4.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://talalabbas84:6No981duj9tLtWSd@cluster0-ijzp4.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
 }
