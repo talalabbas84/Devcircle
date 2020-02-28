@@ -12,7 +12,7 @@ import {
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
-//Load User
+// Load User
 export const loadUser = () => async dispatch => {
   if (localStorage.token) {
     setAuthToken(localStorage.token);
@@ -32,7 +32,7 @@ export const loadUser = () => async dispatch => {
   }
 };
 
-//Register User
+// Register User
 export const register = ({ name, email, password }) => async dispatch => {
   const config = {
     headers: {
@@ -61,7 +61,8 @@ export const register = ({ name, email, password }) => async dispatch => {
     });
   }
 };
-//lOGIN User
+
+// Login User
 export const login = (email, password) => async dispatch => {
   const config = {
     headers: {
@@ -84,8 +85,7 @@ export const login = (email, password) => async dispatch => {
     const errors = err.response.data.errors;
 
     if (errors) {
-      // errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
-      dispatch(setAlert(errors.msg, 'danger'));
+      errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
     }
 
     dispatch({
@@ -93,13 +93,9 @@ export const login = (email, password) => async dispatch => {
     });
   }
 };
-// Logout / Clear Profile
 
+// Logout / Clear Profile
 export const logout = () => dispatch => {
-  dispatch({
-    type: LOGOUT
-  });
-  dispatch({
-    type: CLEAR_PROFILE
-  });
+  dispatch({ type: CLEAR_PROFILE });
+  dispatch({ type: LOGOUT });
 };

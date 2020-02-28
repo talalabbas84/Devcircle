@@ -11,19 +11,23 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <Link to='/profiles'>Developers</Link>
       </li>
       <li>
+        <Link to='/posts'>Posts</Link>
+      </li>
+      <li>
         <Link to='/dashboard'>
-          <i className='fas fa-user'></i>
-          <span className='hide-sm'> Dashboard </span>
+          <i className='fas fa-user' />{' '}
+          <span className='hide-sm'>Dashboard</span>
         </Link>
       </li>
       <li>
         <a onClick={logout} href='#!'>
-          <i className='fas fa-sign-out-alt'></i>{' '}
-          <span className='hide-sm'>Logout </span>
+          <i className='fas fa-sign-out-alt' />{' '}
+          <span className='hide-sm'>Logout</span>
         </a>
       </li>
     </ul>
   );
+
   const guestLinks = (
     <ul>
       <li>
@@ -37,11 +41,12 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </li>
     </ul>
   );
+
   return (
     <nav className='navbar bg-dark'>
       <h1>
         <Link to='/'>
-          <i className='fas fa-code'></i> DevCircle
+          <i className='fas fa-code' /> DevConnector
         </Link>
       </h1>
       {!loading && (
@@ -50,6 +55,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     </nav>
   );
 };
+
 Navbar.propTypes = {
   logout: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
