@@ -1,6 +1,5 @@
 const express = require('express');
 const connectDB = require('./config/db');
-var bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
@@ -9,7 +8,6 @@ connectDB();
 
 //Init Middleware
 
-app.use(bodyParser.json());
 app.use(express.json({ extended: false }));
 
 // Define Routes
