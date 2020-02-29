@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://talalabbas84:6No981duj9tLtWSd@cluster0-ijzp4.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "bce79b1ab5944d6e50dc",
+  "githubSecret": "913536b6c1f6d5587e9f6aa9ac5792618b354903"
+}
