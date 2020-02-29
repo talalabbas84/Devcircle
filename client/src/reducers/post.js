@@ -1,6 +1,5 @@
 import {
   GET_POSTS,
-  GET_ERROR,
   POST_ERROR,
   UPDATE_LIKES,
   DELETE_POST,
@@ -11,7 +10,7 @@ import {
 } from '../actions/types';
 
 const initialState = {
-  post: [],
+  posts: [],
   post: null,
   loading: true,
   error: {}
@@ -19,6 +18,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
   const { type, payload } = action;
+
   switch (type) {
     case GET_POSTS:
       return {
@@ -47,7 +47,7 @@ export default function(state = initialState, action) {
     case POST_ERROR:
       return {
         ...state,
-        posts: payload,
+        error: payload,
         loading: false
       };
     case UPDATE_LIKES:
@@ -61,7 +61,7 @@ export default function(state = initialState, action) {
     case ADD_COMMENT:
       return {
         ...state,
-        post: { ...state.post, comment: payload },
+        post: { ...state.post, comments: payload },
         loading: false
       };
     case REMOVE_COMMENT:
@@ -69,7 +69,7 @@ export default function(state = initialState, action) {
         ...state,
         post: {
           ...state.post,
-          comment: state.post.comments.filter(
+          comments: state.post.comments.filter(
             comment => comment._id !== payload
           )
         },
